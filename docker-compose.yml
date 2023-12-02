@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: cinephilia-pass-dev
+      POSTGRES_USER: cinephiler-dev
+      POSTGRES_DB: cinephiliadb
+  mongodb:
+    image : mongo
+    ports:
+      - 2717:2717
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: monguser
+      MONGO_INITDB_ROOT_PASSWORD: mongpass
+      MONGO_INITDB_DATABASE: mongdb
